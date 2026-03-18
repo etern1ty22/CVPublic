@@ -1,0 +1,125 @@
+@page {
+  size: A4;
+  margin: 8mm;
+}
+
+@media print {
+  :root {
+    background: #ffffff;
+  }
+
+  body {
+    background: #ffffff;
+  }
+
+  .appShell {
+    padding: 0;
+  }
+
+  .resumePage {
+    width: 194mm;
+    min-height: auto;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: #ffffff;
+  }
+
+  .resumeCard,
+  .contactLink,
+  .skillPill {
+    background: #ffffff;
+    box-shadow: none;
+  }
+
+  .heroBlock {
+    gap: 10px;
+    padding: 14px;
+  }
+
+  .heroMain h1 {
+    font-size: 34px;
+  }
+
+  .headline {
+    font-size: 16px;
+  }
+
+  .heroSummary,
+  .summaryCard p,
+  .entrySummary {
+    font-size: 10.5px;
+  }
+
+  .contactsGrid {
+    gap: 6px;
+  }
+
+  .contactLink {
+    padding: 7px 8px;
+  }
+
+  .contactValue {
+    font-size: 9.5px;
+  }
+
+  .sectionBlock {
+    margin-top: 8px;
+  }
+
+  .sectionHeading {
+    margin-bottom: 4px;
+  }
+
+  .resumeCardDense,
+  .summaryCard,
+  .skillsCard {
+    padding: 9px 11px;
+  }
+
+  .entryHeader h3 {
+    font-size: 15px;
+  }
+
+  .entryMeta {
+    font-size: 10px;
+  }
+
+  .entryList {
+    gap: 2px;
+    margin-top: 5px;
+    font-size: 9.5px;
+    line-height: 1.2;
+  }
+
+  .highlightPill {
+    padding: 4px 7px;
+    font-size: 9.5px;
+  }
+
+  .skillPill {
+    font-size: 9.5px;
+  }
+
+  .skillsCard {
+    gap: 5px;
+  }
+
+  .skillPill {
+    padding: 4px 7px;
+    font-size: 9px;
+  }
+
+  .sectionBlock,
+  .resumeCard,
+  .heroBlock,
+  .entryList,
+  .skillsCard {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  a[href] {
+    text-decoration: none;
+  }
+}

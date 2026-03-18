@@ -1,0 +1,312 @@
+:root {
+  color-scheme: light;
+  --page-bg: #edf1f4;
+  --paper: #fdfefe;
+  --paper-strong: #ffffff;
+  --text-strong: #12202d;
+  --text-main: #273746;
+  --text-muted: #526475;
+  --accent: #1f5d7e;
+  --accent-soft: rgba(31, 93, 126, 0.11);
+  --accent-glow: rgba(31, 93, 126, 0.18);
+  --rule: rgba(18, 32, 45, 0.12);
+  --shadow: 0 24px 60px rgba(15, 32, 46, 0.09);
+  font-family: "Aptos", "Segoe UI", "Trebuchet MS", sans-serif;
+  line-height: 1.35;
+  font-weight: 400;
+  color: var(--text-main);
+  background:
+    radial-gradient(circle at top left, rgba(31, 93, 126, 0.16), transparent 28%),
+    linear-gradient(180deg, #eef3f6 0%, #e6edf2 100%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  min-width: 320px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p,
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+.appShell {
+  padding: 28px 20px 44px;
+}
+
+.resumePage {
+  width: min(100%, 840px);
+  min-height: 1122px;
+  margin: 0 auto;
+  padding: 24px;
+  background:
+    linear-gradient(180deg, rgba(31, 93, 126, 0.08), transparent 120px),
+    var(--paper);
+  border: 1px solid rgba(18, 32, 45, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.resumeCard {
+  background: linear-gradient(180deg, var(--paper-strong), rgba(255, 255, 255, 0.93));
+  border: 1px solid var(--rule);
+  border-radius: 22px;
+  position: relative;
+  overflow: hidden;
+}
+
+.resumeCardDense {
+  padding: 12px 14px;
+}
+
+.heroBlock {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(290px, 0.9fr);
+  gap: 14px;
+  padding: 18px;
+  background:
+    radial-gradient(circle at top right, var(--accent-glow), transparent 34%),
+    linear-gradient(180deg, rgba(31, 93, 126, 0.05), rgba(255, 255, 255, 0.92));
+}
+
+.heroBlock::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(180deg, #2e7498, #1f5d7e);
+}
+
+.heroMain {
+  display: grid;
+  gap: 8px;
+}
+
+.eyebrow,
+.sectionHeading span {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.heroMain h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+  font-size: 40px;
+  line-height: 1.02;
+  color: var(--text-strong);
+}
+
+.headline {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-strong);
+}
+
+.location {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.heroSide {
+  padding-left: 4px;
+}
+
+.heroSummary,
+.summaryCard p {
+  font-size: 13px;
+  color: var(--text-main);
+  line-height: 1.4;
+}
+
+.contactsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  grid-column: 1 / -1;
+}
+
+.contactLink {
+  display: grid;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(31, 93, 126, 0.07), rgba(31, 93, 126, 0.03));
+  border: 1px solid rgba(31, 93, 126, 0.14);
+}
+
+.contactLabel {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.contactValue {
+  font-size: 12px;
+  color: var(--text-strong);
+  word-break: break-word;
+}
+
+.sectionBlock {
+  margin-top: 12px;
+}
+
+.sectionHeading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  padding: 0 2px;
+}
+
+.sectionRule {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(31, 93, 126, 0.55), rgba(18, 32, 45, 0.08));
+}
+
+.summaryCard {
+  display: grid;
+  gap: 6px;
+  padding: 12px 14px;
+}
+
+.highlightsRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: 4px;
+}
+
+.highlightPill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(31, 93, 126, 0.13), rgba(31, 93, 126, 0.07));
+  border: 1px solid rgba(31, 93, 126, 0.14);
+  color: var(--text-strong);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.sectionStack {
+  display: grid;
+  gap: 8px;
+}
+
+.entryHeader {
+  display: grid;
+  gap: 5px;
+}
+
+.entryHeader h3 {
+  font-size: 18px;
+  line-height: 1.08;
+  color: var(--text-strong);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+}
+
+.entryMeta {
+  font-size: 11px;
+  line-height: 1.35;
+  color: var(--text-muted);
+}
+
+.entrySummary {
+  font-size: 12px;
+  color: var(--text-main);
+}
+
+.entryList {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.32;
+}
+
+.entryList li::marker {
+  color: var(--accent);
+}
+
+.compactList {
+  gap: 4px;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.projectLinks .contactLink {
+  min-width: 190px;
+}
+
+.skillsCard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 12px 14px;
+}
+
+.skillPill {
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(47, 108, 149, 0.16);
+  background: rgba(47, 108, 149, 0.08);
+  color: var(--text-strong);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media (max-width: 860px) {
+  .appShell {
+    padding: 14px;
+  }
+
+  .resumePage {
+    min-height: auto;
+    padding: 18px;
+  }
+
+  .heroBlock {
+    grid-template-columns: 1fr;
+  }
+
+  .contactsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectLinks .contactLink {
+    min-width: 0;
+    width: 100%;
+  }
+}
