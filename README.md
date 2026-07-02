@@ -1,17 +1,72 @@
-# Resume Template
+# Public Resume Template
 
-Публичная версия этого репозитория обезличена. Настоящие данные резюме нужно хранить в локальном файле `src/content/resume.private.ts`, который не попадёт в git.
+React + TypeScript resume renderer designed to keep real personal data out of public git history. The app renders Russian and English resume versions, supports a private local content override, and exports PDF plus PNG previews through a Playwright automation script.
 
-Anyone can fork this repository, use it as a template, and adapt it for personal or commercial work under the terms of the Unlicense.
+## Portfolio focus
 
-## Локальные приватные данные
+- Typed resume content model in `src/content/types.ts`.
+- Language switching through `?lang=ru` and `?lang=en`.
+- Public/private content split so sensitive resume data stays in `resume.private.ts`.
+- Print-oriented CSS for clean A4 PDF output.
+- Headless export script that builds the app, serves `dist`, and captures PDFs/screenshots.
 
-1. Скопируйте `src/content/resume.private.example.ts` в `src/content/resume.private.ts`.
-2. Заполните `resumeRu` и `resumeEn` своими данными.
-3. Запускайте проект и экспорт PDF как обычно. Приложение автоматически возьмёт приватный файл, если он существует.
+## Tech stack
+
+- React 19
+- TypeScript
+- Vite 7
+- Playwright
+- CSS for screen and print layouts
+
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Open one of the localized views:
+
+```text
+http://localhost:5173/?lang=ru
+http://localhost:5173/?lang=en
+```
+
+## Export PDF
+
+```bash
+npm run export:pdf
+```
+
+Generated files are written to:
+
+```text
+output/pdf/resume-ru.pdf
+output/pdf/resume-en.pdf
+output/pdf/resume-ru-preview.png
+output/pdf/resume-en-preview.png
+```
+
+## Private data workflow
+
+1. Copy `src/content/resume.private.example.ts` to `src/content/resume.private.ts`.
+2. Fill `resumeRu` and `resumeEn` with real data locally.
+3. Keep `src/content/resume.private.ts` out of git.
+4. Use the public sample files only as a reusable template.
+
+## Project structure
+
+```text
+src/App.tsx                         resume rendering components
+src/content/index.ts                public/private content selection
+src/content/resume.ru.ts            public Russian sample content
+src/content/resume.en.ts            public English sample content
+src/content/resume.private.example.ts private-content example
+src/styles/base.css                 screen layout
+src/styles/print.css                print/PDF layout
+scripts/export-pdf.mjs              PDF and PNG export automation
+```
 
 ## Reuse
 
-- Fork the repository or enable "Template repository" in GitHub settings.
-- Keep your real resume data only in `src/content/resume.private.ts`.
-- Public commits can be attributed to your GitHub account with a GitHub `noreply` email instead of a personal mailbox.
+The repository is published as a privacy-safe resume template. Fork it, replace the sample data through the private content file, and export localized PDFs without committing real contact details or job-search data.
